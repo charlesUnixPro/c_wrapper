@@ -1,5 +1,11 @@
 # c\_wrapper
+
 Multics library wrappers for 'cc'
+
+Note:
+
+Strings are assumed to be less then 2^16 bytes long.
+
 
 ```void c_ioa (char * control_string)
 
@@ -47,7 +53,7 @@ Wrapper for "iox_$find_iocb".
 
 c_iox_modes (struct iocb * iocb, char * new_modes, char * old_modes, int * code) 
 Wrapper for "iox_$modes".
-
+"old_modes" is assumed to be allocated "char[512]";
 
 
 c_iox_put_chars (struct iocb * iocb, char * buf, int n, int * code)
