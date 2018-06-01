@@ -11,6 +11,7 @@ main(argc, argv)
   printf ("find_iocb code %d ptr %lo\n", code, iocbp);
   c_iox_modes (iocbp, argv[1], old_modes, & code);
   printf ("modes code %d\n", code);
+  if (code) c_com_err (code, "modes");
   old_modes [512] = 0;
   for (i = 511; i >= 0; i --)
     if (old_modes[i] != ' ')
